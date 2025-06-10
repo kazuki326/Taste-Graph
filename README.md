@@ -93,5 +93,5 @@
 ## Quick Start
 
 1. Clone this repository and open `index.html` in your browser.
-2. A radar chart will visualize sample beers using the data in `data/beers.json`.
+2. The page shows a radar chart of sample beers using data embedded in the file.
 
