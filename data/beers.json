@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Lager",
+    "bitterness": 30,
+    "sweetness": 40,
+    "fruity": 20,
+    "hop_aroma": 30,
+    "body": 50
+  },
+  {
+    "name": "IPA",
+    "bitterness": 70,
+    "sweetness": 20,
+    "fruity": 70,
+    "hop_aroma": 80,
+    "body": 60
+  },
+  {
+    "name": "Stout",
+    "bitterness": 60,
+    "sweetness": 50,
+    "fruity": 20,
+    "hop_aroma": 40,
+    "body": 80
+  }
+]
