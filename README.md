@@ -87,3 +87,11 @@
    * 味データをどのようにユーザーに提示すると理解・利用しやすいかを実地で検証できる。
    * インタラクティブなグラフの有効性や、日本語・英語混在表現での可読性、スマホ・タブレット表示対応の最適化など、実運用に耐えるUX設計のノウハウが蓄積できる。
 
+
+---
+
+## Quick Start
+
+1. Clone this repository and open `index.html` in your browser.
+2. A radar chart will visualize sample beers using the data in `data/beers.json`.
+

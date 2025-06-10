@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #chart-container { max-width: 600px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <h1>Taste Graph</h1>
+    <div id="chart-container">
+        <canvas id="beerChart"></canvas>
+    </div>
+
+    <script>
+    fetch('data/beers.json')
+        .then(response => response.json())
+        .then(beers => {
+            const labels = ['Bitterness', 'Sweetness', 'Fruity', 'Hop Aroma', 'Body'];
+            const datasets = beers.map((beer, index) => ({
+                label: beer.name,
+                data: [
+                    beer.bitterness,
+                    beer.sweetness,
+                    beer.fruity,
+                    beer.hop_aroma,
+                    beer.body
+                ],
+                fill: true,
+                backgroundColor: `rgba(${50+index*70}, ${100+index*50}, ${150-index*30}, 0.2)`,
+                borderColor: `rgba(${50+index*70}, ${100+index*50}, ${150-index*30}, 1)`
+            }));
+
+            new Chart(document.getElementById('beerChart'), {
+                type: 'radar',
+                data: {
+                    labels,
+                    datasets
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    plugins: {
+                        tooltip: { enabled: true },
+                        legend: { position: 'top' }
+                    }
+                }
+            });
+        })
+        .catch(err => console.error('Failed to load data:', err));
+    </script>
+</body>
+</html>
